@@ -1,6 +1,9 @@
-torch
+flask
 transformers
 langchain
+langchain-community
 faiss-cpu
-Pillow
-streamlit
+torch
+torchvision
+requests
+pillow
