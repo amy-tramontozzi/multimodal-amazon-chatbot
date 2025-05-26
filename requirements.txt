@@ -1,0 +1,6 @@
+torch
+transformers
+langchain
+faiss-cpu
+Pillow
+streamlit
