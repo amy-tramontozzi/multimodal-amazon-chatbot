@@ -29,20 +29,7 @@ User's Question:
 
 Answer (in a helpful, friendly tone):
 """)
-3. Define Functions for Querying
-Put the key functions inside the app to:
 
-Compute embedding from text or image query
-
-Query vectorstore for top results
-
-Generate LLM answer
-
-Example:
-
-python
-Copy
-Edit
 def get_text_embedding(text):
     inputs = clip_processor(text=[text], return_tensors="pt", truncation=True).to(device)
     with torch.no_grad():
@@ -62,12 +49,7 @@ def generate_llm_response(results, question):
     context = "\n\n".join([f"{i+1}. {r.page_content}" for i, r in enumerate(results)])
     prompt = prompt_template.format(context=context, question=question)
     return llm.predict(prompt)
-4. Flask App Skeleton
-Here’s a minimal Flask app example for text queries (you can extend it to accept image uploads similarly):
 
-python
-Copy
-Edit
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
